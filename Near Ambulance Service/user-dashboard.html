@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Near Ambulance Service - User</title>
+    <link rel="stylesheet" href="CSS/user-dashboard.css" />
+    <link rel="icon" href="Images/icon.png" type="png/image">
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 🔹 NAVBAR -->
+    <nav class="nav-logo">
+      <div class="logo-area">
+        <img src="Images/image-1.png" width="75" height="50" />
+
+        <h1>Near Ambulance Service</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="user/dashboard.html" class="active">Home</a></li>
+        <li><a href="about.html">About & Feedback</a></li>
+        <li><a href="track.html">Track</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="index.html">Logout</a></li>
+
+      </ul>
+    </nav>
+
+    <div class="head-section">
+        <h2 class="search">Welcome to Near Ambulance Service</h2>
+        <p>Your Trusted Partner in Emergency Medical Transportation</p>
+
+      </div>
+
+      <div class="available">
+        <h2 class="avail">Available Ambulances Near You</h2>
+
+        <div id="ambList" class="container">
+          <!-- Ambulance boxes will appear here -->
+        </div>
+      </div>
+
+      <div class="emergency-section">
+        <h4>In Case Of Emergency</h4>
+        <p>Click the button below to call emergency services</p>
+
+        <button class="ecall-btn" onclick="window.location.href='tel:108'">
+          Emergency Call (108)
+        </button>
+      </div>
+    <script src="JS/user-dashboard.js"></script>
+
+  </body>
+</html>

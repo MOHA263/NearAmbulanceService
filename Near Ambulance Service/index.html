@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+      <link rel="icon" href="Images/icon.png" type="png/image">
+      <link rel="stylesheet" href="CSS/login.css">
+  </head>
+    
+  <body>
+    <div class="login-box">
+      <h2>🚑 Near Ambulance Service</h2>
+
+      <h3>Login to your account</h3>
+
+      <p>View and manage user requests for ambulances.</p>
+
+      <form action="/" method="post">
+        <input type="text" id="loginUsername" name="username" placeholder="Enter your Username" required/>
+
+        <input type="password" id="loginPassword" name="password" placeholder="Enter your Password" required/>
+
+        <a href="#" class="forgot-password" onclick="openForgotPopup()">Forgot Password?</a>
+
+        <button type="submit">Login</button>
+
+        <p>Don't have an account?<a href="#" class="register" onclick="openRegister()">Register here</a></p>
+      </form>
+    </div>
+
+    <!-- Register popup  -->
+
+    <!-- REGISTER MODAL -->
+    <div id="registerModal" class="modal">
+
+        <div class="modal-content">
+            <h3 class="modal-title">Register</h3>
+
+            <form id="registerForm">
+
+                <input type="text" id="regUsername" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Google ID" required>
+                <input type="password" id="pass" placeholder="Password" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+                <select id="role" onchange="roleChange()" required>
+                    <option value="">Select Role</option>
+                    <option value="ADMIN">Admin</option>
+                    <option value="DRIVER">Driver</option>
+                    <option value="USER">User</option>
+                </select>
+
+                <!-- Admin -->
+                <div id="adminFields" style="display:none">
+                    <input type="text" id="hospitalCode" placeholder="Hospital Code" required>
+                </div>
+
+                <!-- Driver -->
+                <div id="driverFields" style="display:none">
+                    <input type="text" id="driverName" placeholder="Driver Name" required>
+                    <input type="text" id="driverId" placeholder="Driver ID" required>
+                    <input type="text" id="ambulanceNumber" placeholder="Ambulance Number" required>
+                    <input type="tel" id="contactNumber" placeholder="Contact Number" maxlength="10" required>
+                </div>
+
+                <p th:if="${param.error}">Please verify your email before logging in.</p>
+                <p id="registerMsg"></p>
+
+                <div class="btn-group">
+                    <button type="button" class="btn-save" onclick="registerUser()">Save</button>
+                    <button type="button" class="btn-cancel" onclick="closeRegister()">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <div id="forgotPopup" class="popup" style="display:none">
+        <div class="popup-box">
+            <h3 id="popupTitle">Forgot Password</h3>
+
+            <input type="email" id="emailID" placeholder="Enter email">
+
+            <!--<p id="responseMsg" class="response-msg"></p>-->
+
+            <button type="button" id="submitBtn" onclick="sendOtp()">Submit</button>
+
+            <div id="otpSection" style="display:none">
+            <input type="text" id="otp" placeholder="Enter OTP">
+            <input type="password" id="newPassword" placeholder="New Password">
+            <input type="password" id="confirmNewPassword" placeholder="Confirm Password">
+            <button type="buttton" id="savePassword" class="savePassword" onclick="resetPassword()">Save Password</button>
+        </div>
+            <button type="button" id="closePopup" onclick="closeForgotPopup()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="JS/login.js"></script>
+  </body>
+</html>

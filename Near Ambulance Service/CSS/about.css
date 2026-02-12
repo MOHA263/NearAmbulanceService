@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🔥 BACKGROUND IMAGE */
+body {
+  min-height: 100vh;
+  background: url("../Images/background.png") no-repeat center center/cover;
+  position: relative;
+}
+
+/* 🌙 DARK OVERLAY */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+
+/* ================= NAVBAR ================= */
+
+.nav-logo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(30, 58, 138, 0.95);
+  padding: 12px 30px;
+  color: white;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #dc2626;
+  text-decoration: underline;
+}
+
+/* ================= ABOUT CONTAINER ================= */
+
+.about {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  color: white;
+}
+
+/* Headings */
+.about h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.about h3 {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #ff4d4d;
+}
+
+.about h4 {
+  font-size: 18px;
+  margin-top: 15px;
+  color: #facc15;
+}
+
+/* Paragraphs */
+.about p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 12px 0;
+  color: #e5e5e5;
+}
+
+/* Lists */
+.about ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.about ul li {
+  margin-bottom: 8px;
+}
+
+/* ================= FEEDBACK FORM ================= */
+
+.about table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.about table td {
+  padding: 10px;
+}
+
+.about input,
+.about textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.about textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Submit Button */
+.about .ecall-btn {
+  background: #dc2626;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.about .ecall-btn:hover {
+  background: #b91c1c;
+}
+
+.about .ecall-btn:active {
+  transform: scale(0.97);
+}
+
+/* ================= POPUP ================= */
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: white;
+  color: black;
+  padding: 25px 35px;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeInScale 0.4s ease-in-out;
+}
+
+/* Animation Name: fadeInScale */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close-fbpopup {
+  margin-top: 15px;
+  background: green;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .nav-logo {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .about {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .about h2 {
+    font-size: 22px;
+  }
+
+  .about h3 {
+    font-size: 18px;
+  }
+
+  .about p,
+  .about ul li {
+    font-size: 14px;
+  }
+}

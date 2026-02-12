@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Near Ambulance Service - Admin</title>
+
+    <!-- Title icon -->
+    <link rel="icon" href="Images/icon.png" type="png/image" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/admin-dashboard.css" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- 🔹 NAVBAR -->
+    <nav class="nav-logo">
+      <div class="logo-area">
+        <img src="Images/image-1.png" width="75" height="50" />
+        <h1>Admin Dashboard</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="admin-dashboard.html" class="active">Home</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="request.html">Requests</a></li>
+        <li><a href="index.html">Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- 🔹 MAIN CONTENT -->
+    <div class="dashboard-content">
+      <h2>Welcome Admin 👋</h2>
+      <p>Manage your ambulance drivers and their statuses here.</p>
+
+      <div class="top-actions">
+        <select class="status-filter" id="statusFilter">
+          <option value="">Select by Filter</option>
+          <option value="total">Total Ambulance</option>
+          <option value="duty">On Duty</option>
+          <option value="available">Available</option>
+          <option value="busy">Busy</option>
+        </select>
+
+        <button class="btn-show" onclick="filterDrivers()">Show</button>
+        <span id="status-count"></span>
+
+        <button class="btn-add-driver" onclick="openModal()">
+          ➕ Add New Driver
+        </button>
+      </div>
+    </div>
+
+    <!-- 🔹 DRIVER TABLE -->
+    <div class="driver-details">
+      <table id="driverTable">
+        <thead>
+          <tr>
+            <th>S.NO</th>
+            <th>Driver Name</th>
+            <th>Ambulance Number</th>
+            <th>Ambulance ID</th>
+            <th>Contact</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <!-- Driver rows will be populated here dynamically -->
+        <tbody id="driverBody">
+          <tr>
+            <td>1</td>
+            <td>Arun Kumar</td>
+            <td>TN 01 AB 1234</td>
+            <td>AMB101</td>
+            <td>9876543210</td>
+            <td style="color: green">Available</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Ravi</td>
+            <td>TN 02 XY 5678</td>
+            <td>AMB102</td>
+            <td>9123456780</td>
+            <td style="color: yellow">On Duty</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Suresh</td>
+            <td>TN 05 GH 9087</td>
+            <td>AMB103</td>
+            <td>9988776655</td>
+            <td style="color: red">Busy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 🔹 ADD DRIVER POPUP -->
+    <div id="driverModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3>Add New Driver</h3>
+
+        <input type="text" id="dName" placeholder="Driver Name" />
+        <input type="text" id="dAmbulanceNo" placeholder="Ambulance Number" />
+        <input type="text" id="dAmbulanceId" placeholder="Ambulance ID" />
+        <input type="text" id="dContact" placeholder="Contact Number" />
+
+        <select id="dStatus">
+          <option value="">Select Status</option>
+          <option value="Available">Available</option>
+          <option value="On Duty">On Duty</option>
+          <option value="Busy">Busy</option>
+        </select>
+
+        <button onclick="saveDriver()">Save Driver</button>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="JS/admin-dashboard.js"></script>
+  </body>
+</html>

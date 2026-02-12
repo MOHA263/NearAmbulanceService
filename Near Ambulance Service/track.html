@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracking...</title>
+    <link rel="stylesheet" href="CSS/track.css" />
+    <link rel="icon" href="Images/icon.png" type="png/image" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  </head>
+  <body>
+    <!-- 🔹 NAVBAR -->
+    <nav class="nav-logo">
+      <div class="logo-area">
+        <img src="Images/image-1.png" width="75" height="50" />
+        <h1>Near Ambulance Service</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="user-dashboard.html">Home</a></li>
+        <li><a href="about.html">About & Feedback</a></li>
+        <li><a href="track.html" class="active">Track</a></li>
+        <li><a href="Booking.html">Booking</a></li>
+        <li><a href="index.html">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="map-container">
+      <h1>Track Ambulance</h1>
+
+      <div class="search-box">
+        <input type="text" id="searchID" placeholder="Enter the Ambulance ID" />
+        <button type="button" onclick="searchAmbulance()" class="btn-search">
+          🔍
+        </button>
+      </div>
+
+      <div id="map"></div>
+
+      <div id="distanceBox" class="distance-box">
+        <h3>Distance Information</h3>
+        <p id="distanceInfo">Search an ambulance to see distance.</p>
+      </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="JS/track.js"></script>
+  </body>
+</html>

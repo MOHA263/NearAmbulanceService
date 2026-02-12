@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Near Ambulance Service - Admin</title>
+
+    <!-- Title icon -->
+    <link rel="icon" href="Images/icon.png" type="png/image" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/map.css" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+
+  <body>
+    <!-- 🔹 NAVBAR -->
+    <nav class="nav-logo">
+      <div class="logo-area">
+        <img src="Images/image-1.png" width="75" height="50" />
+        <h1>Admin Dashboard</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="admin-dashboard.html">Home</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        <li><a href="map.html" class="active">Map</a></li>
+        <li><a href="request.html">Requests</a></li>
+        <li><a href="index.html">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="map-content">
+      <h2>Ambulance Location Map</h2>
+      <p>View real-time locations of all ambulances on the map below.</p>
+    </div>
+    
+    <div id="map"></div>
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="JS/map.js"></script>
+  </body>
+</html>

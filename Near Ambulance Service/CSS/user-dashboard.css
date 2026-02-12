@@ -1,0 +1,206 @@
+/* ==============================
+   RESET & GLOBAL
+   ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  /* Full background image with light overlay for readability */
+  background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
+              url('../Images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* Optional: subtle text shadow for better contrast */
+h1, h2, h3, h4, p, span, button {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ==============================
+   NAVBAR
+   ============================== */
+.nav-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e3a8a;
+  padding: 12px 30px;
+  color: white;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #dc2626;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-decoration-line: underline;
+}
+
+/* ==============================
+   HEAD SECTION
+   ============================== */
+.head-section {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+.head-section h2,
+.head-section p {
+  margin-bottom: 15px;
+  color: #06224a;
+}
+
+/* AVAILABLE SECTION */
+.available {
+  text-align: center;
+  color: #06224a;
+}
+
+.available h2 {
+  margin-bottom: 10px;
+}
+
+/* EMERGENCY SECTION */
+.emergency-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.emergency-section h4 {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.emergency-section p {
+  color: #06224a;
+  margin-bottom: 20px;
+}
+
+.emergency-section .ecall-btn {
+  background-color: red;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.emergency-section .ecall-btn:hover {
+  background-color: darkred;
+}
+
+.emergency-section .ecall-btn:active {
+  background-color: black;
+  color: red;
+  transform: scale(0.98);
+}
+
+/* ==============================
+   AMBULANCE CARDS
+   ============================== */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.ambulance-card {
+  background: rgba(255,255,255,0.95); /* slightly transparent for background */
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.ambulance-card:hover {
+  transform: translateY(-5px);
+}
+
+.ambulance-card h3 {
+  color: #d32f2f;
+  margin-bottom: 8px;
+}
+
+.ambulance-card p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* CALL BUTTON */
+.call-btn {
+  margin-top: 12px;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.call-btn:hover {
+  background-color: #1b5e20;
+}
+
+.call-btn:active {
+  background-color: #004d40;
+  transform: scale(0.98);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 768px) {
+  .nav-logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .head-section, .available, .emergency-section, .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .ambulance-card h3 {
+    font-size: 16px;
+  }
+
+  .ambulance-card p, .call-btn {
+    font-size: 14px;
+  }
+}

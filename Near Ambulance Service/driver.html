@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Driver Dashboard</title>
+
+    <link rel="icon" href="Images/icon.png" type="png/image" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/driver.css" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- 🔹 NAVBAR -->
+    <nav class="nav-logo">
+      <div class="logo-area">
+        <img src="Images/image-1.png" width="75" height="50" />
+        <h1>Driver Dashboard</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="logout">Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- 🔹 MAIN CONTENT -->
+    <div class="driver-content">
+      <h2>Welcome <span id="driver">Mohamed</span> 👋</h2>
+      <p>Manage your profile and view your assignments here.</p>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile-section">
+      <div class="profile">
+        <img id="photo" src="Images/icon.png" alt="image" class="profile-img" />
+        <h3 id="driverName"></h3>
+
+        <p>Driver ID:<span id="driverId">DRV1023</span></p>
+      </div>
+      <hr />
+      <div class="profile-update">
+        <h4>Update your Status</h4>
+        <select id="status-filter" required>
+          <option value="" selected>Select Option...</option>
+          <option value="Available">🟢 Available</option>
+          <option value="On Duty">🟡 On Duty</option>
+          <option value="Busy">🔴 Busy</option>
+        </select>
+        <p id="result"></p>
+        <button class="btn-update-status" onclick="updateStatus()">
+          Update Status
+        </button>
+      </div>
+      <hr />
+      <h4 class="info-row">
+        <span>Ambulance Number :</span>
+        <span id="ambulance">TN 58 AB 1234</span>
+      </h4>
+
+      <h4 class="info-row">
+        <span>Contact :</span>
+        <span id="contact">+91 98765 43210</span>
+      </h4>
+
+      <hr />
+      <div class="profile-card-footer">
+        <button class="btn-edit" onclick="editProfile()">
+          ✏️ Edit Profile
+        </button>
+        <button class="btn-location" onclick="shareLocation()">
+          📍 Share Location
+        </button>
+        <button class="btn-delete" onclick="deleteProfile()">
+          🗑️ Delete Profile
+        </button>
+      </div>
+    </div>
+
+    <!-- EDIT PROFILE MODAL -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <h3>Edit Profile</h3>
+
+        <input type="file" id="editPhoto" accept="image/*" />
+        <input
+          type="text"
+          id="editAmbulance"
+          placeholder="Enter new ambulance number"
+        />
+        <input
+          type="tel"
+          id="editContact"
+          placeholder="Enter new contact number"
+        />
+
+        <div class="btn-group">
+          <button onclick="saveProfile()">Save</button>
+          <button onclick="closeEdit()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Popup -->
+    <div id="deletePopup" class="modal" style="display: none">
+      <div class="modal-content">
+        <h3>Confirm Delete</h3>
+        <p>Enter your password to delete profile</p>
+
+        <input
+          type="password"
+          id="deletePassword"
+          placeholder="Enter Password"
+        />
+        <p id="deleteMsg"></p>
+
+        <button onclick="confirmDelete()" class="btn-delete">Delete</button>
+        <button onclick="closeDeletePopup()">Cancel</button>
+      </div>
+    </div>
+
+    <script src="JS/driver.js"></script>
+  </body>
+</html>
